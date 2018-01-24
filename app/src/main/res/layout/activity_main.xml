@@ -291,14 +291,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:adjustViewBounds="true"
-                    android:src="@drawable/guest" />
+                    android:src="@drawable/user" />
 
                 <com.app.weddingjmnew.Utils.TextViewWithFont
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:gravity="center_horizontal"
-                    android:text="Guests"
+                    android:text="Account"
                     android:textColor="@color/white"
                     android:textSize="20sp"
                     android:textStyle="bold" />
