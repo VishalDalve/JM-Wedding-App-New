@@ -135,8 +135,8 @@ public class MainActivity extends AppCompatActivity {
                 "%d days, %d hours, %d minutes, %d seconds%n",
                 elapsedDays, elapsedHours, elapsedMinutes, elapsedSeconds);
 
-        //long time21 = (long) elapsedDays * 24 * 60 * 60 * 1000;
-        mCvCountdownViewTest21.start(different);
+        long time21 = (long) elapsedDays * 24 * 60 * 60 * 1000;
+        mCvCountdownViewTest21.start(time21);
     }
 
 }
