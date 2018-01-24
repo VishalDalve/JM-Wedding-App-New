@@ -235,6 +235,7 @@
 
         <!--layout three horizantal contaimn two-->
         <LinearLayout
+            android:id="@+id/ll_menu2"
             android:layout_below="@+id/ll_menu1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -306,5 +307,35 @@
 
 
         </LinearLayout>
+
+
+        <cn.iwgang.countdownview.CountdownView
+
+            android:id="@+id/cv_countdownViewTest21"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            app:isHideTimeBackground="false"
+            app:isShowDay="true"
+            app:isShowHour="true"
+            app:isShowMillisecond="false"
+            app:isShowMinute="true"
+            app:isShowSecond="true"
+            app:isShowTimeBgDivisionLine="false"
+            app:isTimeTextBold="true"
+            app:suffixGravity="center"
+            app:suffixTextColor="#000000"
+            android:layout_marginBottom="16dp"
+            app:suffixTextSize="20sp"
+            app:timeBgColor="#482f28"
+            android:layout_below="@+id/ll_menu2"
+            app:timeBgRadius="22.5dp"
+            app:timeBgSize="45dp"
+            app:timeTextColor="#FFFFFF"
+            app:timeTextSize="25sp"/>
+
+
     </RelativeLayout>
 </ScrollView>
