@@ -33,7 +33,6 @@ public class LoginActivity extends AppCompatActivity implements
     private static final int RC_SIGN_IN = 9001;
     private GoogleSignInClient mGoogleSignInClient;
     private TextView mStatusTextView;
-    String name;
     private static final String TAG = "SignInActivity";
 
 

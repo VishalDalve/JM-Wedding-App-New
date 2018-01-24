@@ -19,7 +19,7 @@ import cn.iwgang.countdownview.CountdownView;
 
 public class MainActivity extends AppCompatActivity {
 
-    LinearLayout groom, bride, maps;
+    LinearLayout groom, bride, maps,user;
     Intent i;
     ImageView lft, rgt;
     Context mcontext;
@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         groom = findViewById(R.id.ll_groom);
         bride = findViewById(R.id.ll_bride);
         maps = findViewById(R.id.ll_maps);
+        user = findViewById(R.id.ll_user);
 
         lft = findViewById(R.id.iv_lft);
         rgt = findViewById(R.id.iv_rgt);
@@ -97,6 +98,16 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 i = new Intent(mcontext, MapsActivity.class);
+                startActivity(i);
+
+            }
+        });
+
+        user.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                i = new Intent(mcontext, UserActivity.class);
                 startActivity(i);
 
             }
