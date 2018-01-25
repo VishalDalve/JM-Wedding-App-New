@@ -36,12 +36,16 @@ public class ImageSliderActivity extends AppCompatActivity implements BaseSlider
         mDemoSlider = findViewById(R.id.slider);
         title = findViewById(R.id.title);
 
+
+        // getting intent here -----------
         data = getIntent().getExtras().getString("Family", "");
 
         title.setText(data);
 
         HashMap<String, Integer> file_maps = new HashMap<String, Integer>();
 
+
+        //Switching data as per activity ----------------
 
         switch (data) {
 
@@ -66,6 +70,37 @@ public class ImageSliderActivity extends AppCompatActivity implements BaseSlider
                 file_maps.put("College Friends", R.drawable.friends1);
                 file_maps.put("School Friends", R.drawable.friends2);
                 file_maps.put("Office Friends", R.drawable.friends3);
+
+                break;
+
+            case "Mehandi":
+
+                file_maps.put("College Friends", R.drawable.friends1);
+
+
+                break;
+
+            case "Haldi":
+
+                file_maps.put("College Friends", R.drawable.friends1);
+//                file_maps.put("School Friends", R.drawable.friends2);
+//                file_maps.put("Office Friends", R.drawable.friends3);
+
+                break;
+
+            case "Wedding":
+
+                file_maps.put("College Friends", R.drawable.friends1);
+//                file_maps.put("School Friends", R.drawable.friends2);
+//                file_maps.put("Office Friends", R.drawable.friends3);
+
+                break;
+
+            case "After":
+
+                file_maps.put("College Friends", R.drawable.friends1);
+//                file_maps.put("School Friends", R.drawable.friends2);
+//                file_maps.put("Office Friends", R.drawable.friends3);
 
                 break;
 

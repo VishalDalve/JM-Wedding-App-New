@@ -38,7 +38,7 @@
             android:layout_marginTop="20dp"
             android:adjustViewBounds="true"
             android:elevation="10dp"
-            app:cardCornerRadius="100dp">
+            app:cardCornerRadius="90dp">
 
             <ImageView
                 android:id="@+id/iv_email"

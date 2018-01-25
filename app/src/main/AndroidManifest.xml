@@ -25,6 +25,7 @@
         <activity android:name=".MapsActivity"/>
         <activity android:name=".UserActivity"/>
         <activity android:name=".WishActivity"/>
+        <activity android:name=".GuestActivity"/>
     </application>
 
 </manifest>

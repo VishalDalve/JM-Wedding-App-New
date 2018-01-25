@@ -25,7 +25,7 @@ public class GroomActivity extends AppCompatActivity implements BaseSliderView.O
 
     private SliderLayout mDemoSlider;
     Context mcontext;
-    LinearLayout events, family,friends,relatives;
+    LinearLayout events, family,friends,relatives,guest;
     Intent i;
 
     @Override
@@ -40,6 +40,7 @@ public class GroomActivity extends AppCompatActivity implements BaseSliderView.O
         family = findViewById(R.id.ll_family);
         friends = findViewById(R.id.ll_friends);
         relatives = findViewById(R.id.ll_relatives);
+        guest = findViewById(R.id.ll_guest);
 
         HashMap<String, Integer> file_maps = new HashMap<String, Integer>();
         file_maps.put("Hannibal", R.drawable.bride);
@@ -101,6 +102,16 @@ public class GroomActivity extends AppCompatActivity implements BaseSliderView.O
             @Override
             public void onClick(View view) {
                 i = new Intent(mcontext, ImageSliderActivity.class);
+                i.putExtra("Family", "Relatives");
+                startActivity(i);
+
+            }
+        });
+
+        guest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                i = new Intent(mcontext, GuestActivity.class);
                 i.putExtra("Family", "Relatives");
                 startActivity(i);
 
