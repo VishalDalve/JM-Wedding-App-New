@@ -1,82 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/borderbg_main"
+    android:orientation="vertical"
     tools:context="com.app.weddingjmnew.MainActivity"
     tools:layout_editor_absoluteY="81dp">
 
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <com.app.weddingjmnew.Utils.TextViewWithFont
+        android:id="@+id/title"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="25dp"
+        android:gravity="center_horizontal"
+        android:text="Wedding Invitation"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:textStyle="bold" />
 
-        tools:context="com.app.weddingjmnew.MainActivity"
-        tools:layout_editor_absoluteY="81dp">
+    <View
+        android:id="@+id/vw"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_below="@+id/title"
+        android:layout_marginBottom="5dp"
+        android:background="@color/white" />
 
-        <com.app.weddingjmnew.Utils.TextViewWithFont
-            android:id="@+id/title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:layout_marginTop="25dp"
-            android:gravity="center_horizontal"
-            android:text="Wedding Invitation"
-            android:textColor="@color/white"
-            android:textSize="25sp"
-            android:textStyle="bold" />
 
-        <View
-            android:id="@+id/vw"
-            android:layout_width="match_parent"
-            android:layout_height="0.5dp"
-            android:layout_below="@+id/title"
-            android:layout_marginBottom="5dp"
-            android:background="@color/white" />
+    <LinearLayout
+        android:id="@+id/ll_photos"
 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/vw"
+        android:layout_gravity="center_horizontal"
+        android:orientation="vertical">
 
         <LinearLayout
-            android:id="@+id/ll_photos"
+            android:id="@+id/ll_groom"
+            android:background="@drawable/borderbgshadow"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/vw"
-            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
             android:orientation="horizontal">
 
+            <android.support.v7.widget.CardView
+                android:id="@+id/cardView"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:adjustViewBounds="true"
+                android:layout_margin="10dp"
+                android:elevation="10dp"
+                app:cardCornerRadius="100dp">
+
+                <ImageView
+                    android:id="@+id/roundedImageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/groom" />
+            </android.support.v7.widget.CardView>
+
             <LinearLayout
-                android:id="@+id/ll_groom"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginTop="15dp"
-                android:layout_weight="1"
-                android:gravity="center_horizontal"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:gravity="center_vertical"
+                android:layout_height="match_parent">
 
-                <android.support.v7.widget.CardView
-                    android:id="@+id/cardView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="200dp"
-                    android:adjustViewBounds="true"
-                    android:elevation="10dp"
-                    app:cardCornerRadius="100dp">
-
-                    <ImageView
-                        android:id="@+id/roundedImageView"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:scaleType="centerCrop"
-                        app:srcCompat="@drawable/groom" />
-                </android.support.v7.widget.CardView>
 
                 <com.app.weddingjmnew.Utils.TextViewWithFont
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
+
                     android:text="Dhruve Sharma"
                     android:textColor="@color/white"
                     android:textSize="20sp"
@@ -88,45 +93,41 @@
                     android:layout_marginTop="10dp"
                     android:text="view more"
                     android:textColor="@color/white"
-                    android:textSize="10sp"
+                    android:textSize="12sp"
                     android:textStyle="bold" />
+
 
             </LinearLayout>
 
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_bride"
+            android:background="@drawable/borderbgshadow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+
+
             <LinearLayout
-                android:id="@+id/ll_bride"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginTop="15dp"
-                android:layout_weight="1"
-                android:gravity="center_horizontal"
-                android:orientation="vertical">
+                android:layout_width="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_vertical"
+                android:layout_height="match_parent">
 
-                <android.support.v7.widget.CardView
-                    android:id="@+id/cardView2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="200dp"
-                    android:layout_toRightOf="@+id/cardView"
-                    android:adjustViewBounds="true"
-                    android:elevation="10dp"
-                    app:cardCornerRadius="100dp">
-
-                    <ImageView
-                        android:id="@+id/roundedImageView2"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:scaleType="centerCrop"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:srcCompat="@drawable/bride" />
-                </android.support.v7.widget.CardView>
 
                 <com.app.weddingjmnew.Utils.TextViewWithFont
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="Soniya Varma"
+
+                    android:text="Neha Varma"
                     android:textColor="@color/white"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -137,263 +138,87 @@
                     android:layout_marginTop="10dp"
                     android:text="view more"
                     android:textColor="@color/white"
-                    android:textSize="10sp"
+                    android:textSize="12sp"
                     android:textStyle="bold" />
+
             </LinearLayout>
 
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/bond"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/ll_photos"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:id="@+id/iv_lft"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
+            <android.support.v7.widget.CardView
+                android:layout_width="200dp"
+                android:layout_height="200dp"
                 android:adjustViewBounds="true"
-                android:src="@drawable/rgtknot" />
+                android:layout_margin="10dp"
+                android:elevation="10dp"
+                app:cardCornerRadius="100dp">
 
-            <ImageView
-                android:id="@+id/iv_rgt"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:adjustViewBounds="true"
-                android:src="@drawable/lftknot" />
-
-
-        </LinearLayout>
-
-        <!--welcome message-->
-        <android.support.v7.widget.CardView
-            android:id="@+id/welcome"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/bond"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginTop="20dp"
-            android:elevation="8dp"
-            app:cardBackgroundColor="#60ffffff">
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-
-                <com.app.weddingjmnew.Utils.TextViewWithFont
+                <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:gravity="center_horizontal"
-                    android:padding="16dp"
-                    android:text="I welcome you to love To make my day special And unforgettable."
-                    android:textColor="@color/white"
-                    android:textSize="25sp"
-                    android:textStyle="bold" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center_horizontal"
-                    android:paddingBottom="16dp"
-                    android:text="18 Feb 2018"
-                    android:textColor="@color/white"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/bride" />
+            </android.support.v7.widget.CardView>
 
-
-            </LinearLayout>
-
-        </android.support.v7.widget.CardView>
-
-
-        <!--layout one horizantal contaimn two-->
-        <LinearLayout
-            android:id="@+id/ll_menu1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/welcome"
-
-            android:orientation="horizontal">
-
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="16dp"
-                android:layout_weight="1"
-                android:background="@drawable/borderbgshadow"
-                android:orientation="vertical"
-                android:padding="30dp">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:adjustViewBounds="true"
-                    android:src="@drawable/invitation" />
-
-                <com.app.weddingjmnew.Utils.TextViewWithFont
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:gravity="center_horizontal"
-                    android:text="Invitation"
-                    android:textColor="@color/white"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-
-
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:id="@+id/ll_wishes"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
-                android:layout_marginTop="16dp"
-                android:layout_weight="1"
-                android:background="@drawable/borderbgshadow"
-                android:orientation="vertical"
-                android:padding="30dp">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:adjustViewBounds="true"
-                    android:src="@drawable/wishes" />
-
-                <com.app.weddingjmnew.Utils.TextViewWithFont
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:gravity="center_horizontal"
-                    android:text="Give  Wishes"
-                    android:textColor="@color/white"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-
-            </LinearLayout>
-
+            <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="10dp"-->
+            <!--android:text="view more"-->
+            <!--android:textColor="@color/white"-->
+            <!--android:textSize="10sp"-->
+            <!--android:textStyle="bold" />-->
 
         </LinearLayout>
 
-        <!--layout three horizantal contaimn two-->
-        <LinearLayout
-            android:id="@+id/ll_menu2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/ll_menu1"
-            android:orientation="horizontal">
+        <!--<LinearLayout-->
+            <!--android:id="@+id/ll_bride"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginLeft="5dp"-->
+            <!--android:layout_marginRight="5dp"-->
+            <!--android:layout_marginTop="15dp"-->
+            <!--android:layout_weight="1"-->
+            <!--android:gravity="center_horizontal"-->
+            <!--android:orientation="vertical">-->
 
-            <LinearLayout
-                android:id="@+id/ll_maps"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="16dp"
-                android:layout_weight="1"
-                android:background="@drawable/borderbgshadow"
-                android:orientation="vertical"
-                android:padding="30dp">
+            <!--<android.support.v7.widget.CardView-->
+                <!--android:id="@+id/cardView2"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="200dp"-->
+                <!--android:layout_toRightOf="@+id/cardView"-->
+                <!--android:adjustViewBounds="true"-->
+                <!--android:elevation="10dp"-->
+                <!--app:cardCornerRadius="100dp">-->
 
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:adjustViewBounds="true"
-                    android:src="@drawable/location" />
+                <!--<ImageView-->
+                    <!--android:id="@+id/roundedImageView2"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:scaleType="centerCrop"-->
+                    <!--app:layout_constraintTop_toTopOf="parent"-->
+                    <!--app:srcCompat="@drawable/bride" />-->
+            <!--</android.support.v7.widget.CardView>-->
 
-                <com.app.weddingjmnew.Utils.TextViewWithFont
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:gravity="center_horizontal"
-                    android:text="Location"
-                    android:textColor="@color/white"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
+            <!--<com.app.weddingjmnew.Utils.TextViewWithFont-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginTop="10dp"-->
+                <!--android:text="Soniya Varma"-->
+                <!--android:textColor="@color/white"-->
+                <!--android:textSize="20sp"-->
+                <!--android:textStyle="bold" />-->
 
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginTop="10dp"-->
+                <!--android:text="view more"-->
+                <!--android:textColor="@color/white"-->
+                <!--android:textSize="10sp"-->
+                <!--android:textStyle="bold" />-->
+        <!--&lt;!&ndash;</LinearLayout>&ndash;&gt;-->
 
-            </LinearLayout>
+    <!--</LinearLayout>-->
+    </LinearLayout>
 
-
-            <LinearLayout
-                android:id="@+id/ll_user"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
-                android:layout_marginTop="16dp"
-                android:layout_weight="1"
-                android:background="@drawable/borderbgshadow"
-                android:orientation="vertical"
-                android:padding="30dp">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:adjustViewBounds="true"
-                    android:src="@drawable/user" />
-
-                <com.app.weddingjmnew.Utils.TextViewWithFont
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:gravity="center_horizontal"
-                    android:text="Account"
-                    android:textColor="@color/white"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-
-            </LinearLayout>
-
-
-        </LinearLayout>
-
-
-        <cn.iwgang.countdownview.CountdownView
-
-            android:id="@+id/cv_countdownViewTest21"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/ll_menu2"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="16dp"
-            android:layout_marginTop="20dp"
-            app:isHideTimeBackground="false"
-            app:isShowDay="true"
-            app:isShowHour="true"
-            app:isShowMillisecond="false"
-            app:isShowMinute="true"
-            app:isShowSecond="true"
-            app:isShowTimeBgDivisionLine="false"
-            app:isTimeTextBold="true"
-            app:suffixGravity="center"
-            app:suffixTextColor="#000000"
-            app:suffixTextSize="20sp"
-            app:timeBgColor="#482f28"
-            app:timeBgRadius="22.5dp"
-            app:timeBgSize="45dp"
-            app:timeTextColor="#FFFFFF"
-            app:timeTextSize="25sp" />
-
-        <View
-            android:id="@+id/bt"
-            android:layout_width="match_parent"
-            android:layout_height="0.5dp"
-            android:layout_below="@+id/title"
-            android:layout_marginBottom="5dp"
-            android:background="@color/white" />
-    </RelativeLayout>
-</ScrollView>
+</LinearLayout>

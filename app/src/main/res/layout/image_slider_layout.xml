@@ -1,21 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:orientation="vertical"
+    android:layout_height="match_parent"
     android:background="@drawable/borderbg_main"
-    android:layout_height="match_parent">
+    android:orientation="vertical">
 
-    <com.app.weddingjmnew.Utils.TextViewWithFont
-        android:id="@+id/title"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:layout_marginTop="25dp"
-        android:gravity="center_horizontal"
-        android:text="ff"
-        android:textColor="@color/white"
-        android:textSize="25sp"
-        android:textStyle="bold" />
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+           android:layout_marginRight="20dp"
+            android:layout_marginLeft="10dp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/back" />
+
+
+        <com.app.weddingjmnew.Utils.TextViewWithFont
+            android:id="@+id/title"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp"
+
+            android:text="ff"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="10dp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/home" />
+
+
+    </LinearLayout>
+
 
     <View
         android:layout_width="match_parent"
@@ -25,12 +54,12 @@
 
     <com.daimajia.slider.library.SliderLayout
         android:id="@+id/slider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_weight="1" />
 
     <com.daimajia.slider.library.Indicators.PagerIndicator
         android:id="@+id/custom_indicator"
@@ -38,5 +67,25 @@
         android:layout_height="wrap_content"
         android:gravity="center" />
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="10dp"
+        android:adjustViewBounds="true"
+        android:scaleX="1.5"
+        android:src="@drawable/divider" />
+
+    <com.app.weddingjmnew.Utils.TextViewWithFont
+        android:id="@+id/subtitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center_horizontal"
+        android:text="Father and Mother"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
 </LinearLayout>

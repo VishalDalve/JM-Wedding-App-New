@@ -12,17 +12,44 @@
         android:orientation="vertical">
 
 
-        <com.app.weddingjmnew.Utils.TextViewWithFont
-            android:id="@+id/title"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:layout_marginTop="25dp"
-            android:gravity="center_horizontal"
-            android:text="Groom"
-            android:textColor="@color/white"
-            android:textSize="25sp"
-            android:textStyle="bold" />
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="10dp"
+                android:adjustViewBounds="true"
+                android:src="@drawable/back" />
+
+
+            <com.app.weddingjmnew.Utils.TextViewWithFont
+                android:id="@+id/title"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="20dp"
+
+                android:text="Groom "
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="10dp"
+                android:adjustViewBounds="true"
+                android:src="@drawable/home" />
+
+
+        </LinearLayout>
 
         <com.daimajia.slider.library.SliderLayout
             android:id="@+id/slider"
@@ -181,7 +208,81 @@
 
         </LinearLayout>
 
-        <!--layout three horizantal contaimn two-->
+        <!--&lt;!&ndash;layout three horizantal contaimn two&ndash;&gt;-->
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:orientation="horizontal">-->
+
+
+
+            <!--<LinearLayout-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginLeft="16dp"-->
+                <!--android:layout_marginTop="16dp"-->
+                <!--android:layout_marginBottom="16dp"-->
+                <!--android:layout_weight="1"-->
+                <!--android:background="@drawable/borderbgshadow"-->
+                <!--android:orientation="vertical"-->
+                <!--android:padding="30dp">-->
+
+                <!--<ImageView-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="100dp"-->
+                    <!--android:adjustViewBounds="true"-->
+                    <!--android:src="@drawable/pooja" />-->
+
+                <!--<com.app.weddingjmnew.Utils.TextViewWithFont-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginTop="10dp"-->
+                    <!--android:gravity="center_horizontal"-->
+                    <!--android:text="Pooja"-->
+                    <!--android:textColor="@color/white"-->
+                    <!--android:textSize="20sp"-->
+                    <!--android:textStyle="bold" />-->
+
+
+            <!--</LinearLayout>-->
+
+
+            <!--<LinearLayout-->
+                <!--android:id="@+id/ll_guest"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginTop="16dp"-->
+                <!--android:layout_marginLeft="16dp"-->
+                <!--android:layout_marginRight="16dp"-->
+                <!--android:layout_marginBottom="16dp"-->
+                <!--android:layout_weight="1"-->
+                <!--android:background="@drawable/borderbgshadow"-->
+                <!--android:orientation="vertical"-->
+                <!--android:padding="30dp">-->
+
+                <!--<ImageView-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="100dp"-->
+                    <!--android:adjustViewBounds="true"-->
+                    <!--android:src="@drawable/guest" />-->
+
+                <!--<com.app.weddingjmnew.Utils.TextViewWithFont-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginTop="10dp"-->
+                    <!--android:gravity="center_horizontal"-->
+                    <!--android:text="Guests"-->
+                    <!--android:textColor="@color/white"-->
+                    <!--android:textSize="20sp"-->
+                    <!--android:textStyle="bold" />-->
+
+            <!--</LinearLayout>-->
+
+
+        <!--</LinearLayout>-->
+
+
+        <!--layout three horizantal contaimn three-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -189,12 +290,13 @@
 
 
 
+            <!--give wishes-->
             <LinearLayout
+                android:id="@+id/ll_wishes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="16dp"
-                android:layout_marginBottom="16dp"
                 android:layout_weight="1"
                 android:background="@drawable/borderbgshadow"
                 android:orientation="vertical"
@@ -204,24 +306,23 @@
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:adjustViewBounds="true"
-                    android:src="@drawable/pooja" />
+                    android:src="@drawable/wishes" />
 
                 <com.app.weddingjmnew.Utils.TextViewWithFont
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:gravity="center_horizontal"
-                    android:text="Pooja"
+                    android:text="Give  Wishes"
                     android:textColor="@color/white"
                     android:textSize="20sp"
                     android:textStyle="bold" />
-
 
             </LinearLayout>
 
 
             <LinearLayout
-                android:id="@+id/ll_guest"
+                android:id="@+id/ll_engagement"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -237,14 +338,153 @@
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:adjustViewBounds="true"
-                    android:src="@drawable/guest" />
+                    android:src="@drawable/ring" />
 
                 <com.app.weddingjmnew.Utils.TextViewWithFont
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:gravity="center_horizontal"
-                    android:text="Guests"
+                    android:text="Engagement"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <!--layout three horizantal contaimn four-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_weight="1"
+                android:background="@drawable/borderbgshadow"
+                android:orientation="vertical"
+                android:padding="30dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/invitation" />
+
+                <com.app.weddingjmnew.Utils.TextViewWithFont
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_horizontal"
+                    android:text="Invitation"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_maps"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_weight="1"
+                android:background="@drawable/borderbgshadow"
+                android:orientation="vertical"
+                android:padding="30dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/location" />
+
+                <com.app.weddingjmnew.Utils.TextViewWithFont
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_horizontal"
+                    android:text="Location"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+
+            <!--give wishes-->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_weight="1"
+                android:background="@drawable/borderbgshadow"
+                android:orientation="vertical"
+                android:padding="30dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/gallery" />
+
+                <com.app.weddingjmnew.Utils.TextViewWithFont
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_horizontal"
+                    android:text="Gallery"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"
+                android:visibility="invisible"
+                android:layout_weight="1"
+                android:background="@drawable/borderbgshadow"
+                android:orientation="vertical"
+                android:padding="30dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/ring" />
+
+                <com.app.weddingjmnew.Utils.TextViewWithFont
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_horizontal"
+                    android:text="Engagement"
                     android:textColor="@color/white"
                     android:textSize="20sp"
                     android:textStyle="bold" />
