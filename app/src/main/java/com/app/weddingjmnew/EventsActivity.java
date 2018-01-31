@@ -67,7 +67,5 @@ CardView mehndi,haldi,wedding,afterwedding;
 
             }
         });
-
-
     }
 }

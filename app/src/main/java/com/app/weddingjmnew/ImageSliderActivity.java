@@ -2,9 +2,11 @@ package com.app.weddingjmnew;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.widget.TextView;
 
 import com.daimajia.slider.library.Animations.DescriptionAnimation;
@@ -13,7 +15,13 @@ import com.daimajia.slider.library.SliderTypes.BaseSliderView;
 import com.daimajia.slider.library.SliderTypes.TextSliderView;
 import com.daimajia.slider.library.Tricks.ViewPagerEx;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.HashMap;
+
+import static com.app.weddingjmnew.Utils.Util.PREFS_LOGIN_DATA;
 
 /**
  * Created by Vishal on 1/23/2018.
@@ -26,6 +34,7 @@ public class ImageSliderActivity extends AppCompatActivity implements BaseSlider
     Intent i;
     TextView title;
     String data;
+    HashMap<String, String> file_maps;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -37,12 +46,18 @@ public class ImageSliderActivity extends AppCompatActivity implements BaseSlider
         title = findViewById(R.id.title);
 
 
+        final SharedPreferences acid_pref = mcontext.getSharedPreferences(PREFS_LOGIN_DATA, mcontext.MODE_PRIVATE);
+
+        String alldata = acid_pref.getString("alldata", null);
+        Log.d("All_DATA_Image", alldata);
+
+
         // getting intent here -----------
         data = getIntent().getExtras().getString("Family", "");
 
         title.setText(data);
 
-        HashMap<String, Integer> file_maps = new HashMap<String, Integer>();
+        file_maps = new HashMap<String, String>();
 
 
         //Switching data as per activity ----------------
@@ -51,56 +66,39 @@ public class ImageSliderActivity extends AppCompatActivity implements BaseSlider
 
             case "Family":
 
-                file_maps.put("Parents", R.drawable.parents);
-                file_maps.put("Cousins", R.drawable.cousins);
-                file_maps.put("Brothers", R.drawable.brothers);
+                parseResult("Family", alldata);
+
 
                 break;
 
             case "Relatives":
 
-                file_maps.put("Parents", R.drawable.parents);
-                file_maps.put("Cousins", R.drawable.cousins);
-                file_maps.put("Brothers", R.drawable.brothers);
+                parseResult("Relatives", alldata);
 
                 break;
 
             case "Friends":
-
-                file_maps.put("College Friends", R.drawable.friends1);
-                file_maps.put("School Friends", R.drawable.friends2);
-                file_maps.put("Office Friends", R.drawable.friends3);
+                parseResult("Friends", alldata);
 
                 break;
 
             case "Mehandi":
-
-                file_maps.put("College Friends", R.drawable.friends1);
-
+                parseResult("Mehandi", alldata);
 
                 break;
 
             case "Haldi":
-
-                file_maps.put("College Friends", R.drawable.friends1);
-//                file_maps.put("School Friends", R.drawable.friends2);
-//                file_maps.put("Office Friends", R.drawable.friends3);
+                parseResult("Haldi", alldata);
 
                 break;
 
             case "Wedding":
-
-                file_maps.put("College Friends", R.drawable.friends1);
-//                file_maps.put("School Friends", R.drawable.friends2);
-//                file_maps.put("Office Friends", R.drawable.friends3);
+                parseResult("Wedding", alldata);
 
                 break;
 
             case "After":
-
-                file_maps.put("College Friends", R.drawable.friends1);
-//                file_maps.put("School Friends", R.drawable.friends2);
-//                file_maps.put("Office Friends", R.drawable.friends3);
+                parseResult("pooja", alldata);
 
                 break;
 
@@ -125,7 +123,7 @@ public class ImageSliderActivity extends AppCompatActivity implements BaseSlider
         mDemoSlider.setPresetTransformer(SliderLayout.Transformer.Background2Foreground);
         mDemoSlider.setPresetIndicator(SliderLayout.PresetIndicators.Center_Bottom);
         mDemoSlider.setCustomAnimation(new DescriptionAnimation());
-        mDemoSlider.setDuration(3000);
+        mDemoSlider.setDuration(8000);
         mDemoSlider.addOnPageChangeListener(this);
 
     }
@@ -155,4 +153,60 @@ public class ImageSliderActivity extends AppCompatActivity implements BaseSlider
     public void onPageScrollStateChanged(int state) {
 
     }
+
+    //parsed all server wedding data ----------------------------
+    private void parseResult(String family, String result) {
+
+        try {
+            JSONObject response = new JSONObject(result);
+
+            String msg = response.getString("result");
+            Log.d("Result", msg);
+
+            JSONArray posts = response.optJSONArray("data");
+
+            if (posts != null) {
+
+                for (int i = 0; i < posts.length(); i++) {
+                    int flag = 0;
+                    JSONObject post = posts.optJSONObject(i);
+
+                    String msgg = post.optString("TITLE");
+                    String img = post.optString("PATH");
+                    String category = post.optString("STATUS");
+                    String type = post.optString("TYPE");
+
+//                    Log.d("Title", msgg);
+//                    Log.d("Imag", img);
+//                    Log.d("Category", category);
+//                    Log.d("Type", type);
+
+                    // adding data appropriatly as activity clicked -------------------------
+
+                    if (family.equalsIgnoreCase(category)) {
+
+                        file_maps.put(msgg, img);
+                        Log.d("ResultINLoop", img);
+
+                    }
+
+
+                    //  FeedItem item = new FeedItem();
+//                    item.setApp_offer_id(post.optString("app_offers_id"));
+//                    item.setApp_name(post.optString("title"));
+//                    "ID": "5",
+//                            "USER_ID": "ikrams290@gmail.com",
+//                            "TITLE": "family one",
+//                            "PATH": "uploads/f1.jpg",
+//                            "STATUS": "family",
+//                            "TYPE": "bride",
+
+                }
+            }
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
 }
